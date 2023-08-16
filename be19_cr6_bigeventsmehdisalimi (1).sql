@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 12, 2023 at 07:04 PM
+-- Generation Time: Aug 16, 2023 at 10:42 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -69,8 +69,13 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `name`, `date`, `description`, `image`, `capacity`, `email`, `phone_number`, `url`, `type`, `street_name`, `number`, `zip_code`, `city_name`) VALUES
-(1, 'Event 1', '2024-01-12 17:00:00', 'Description 1', 'psychedelic-7858138-1280-64d7a32b1bfe9.jpg', 3400, 'event1@event.com', '9548934h943058', 'http://event1.com', 'music', 'Street 1', '1', 'ZipCode-1', 'City 1'),
-(2, 'Event 2', '2023-01-27 19:00:00', 'Event 2 Descritption', 'default.jpg', 1200, 'event2@event.com', '8908098', 'http://www.event2.com', 'sport', 'Street 2', '2', 'ZipCode_2', 'City 2');
+(1, 'Event 1', '2024-01-12 17:00:00', 'Description 1', 'bicycle-8029570-1280-64d91d98af798.jpg', 3400, 'event1@event.com', '9548934h943058', 'http://event1.com', 'music', 'Street 1', '1', 'ZipCode-1', 'City 1'),
+(2, 'Event 22', '2023-01-27 19:00:00', 'Event 2 Descritption2', 'bird-8165143-1280-64d91d89536f4.jpg', 1200, 'event2@event.com', '8908098', 'http://www.event2.com', 'other', 'Street 2', '2', 'ZipCode_2', 'City 22'),
+(3, 'Event 3', '2023-08-18 11:43:00', 'Event 3 Description', 'baseball-7985433-1280-64d91e3a9e381.jpg', 1230, 'event3@event.com', '97879', 'http://www.event3.com', 'movie', 'street 3', '3', '123', 'City 3'),
+(4, 'Event 4', '2023-08-16 12:14:00', 'Event 4 Description', 'wall-8155414-1280-64d8ad6ca16ec.jpg', 32767, 'event4@event.com', '78977879', 'http://www.event4.com', 'sport', 'Street 4', '4', 'SWE 4', 'City 4'),
+(5, 'Event 5', '2023-08-10 12:16:00', 'Event 5 Description', 'machinery-8154964-1280-64d8addd74453.jpg', 32767, 'event5@event.com', '8797897', 'http://www.event5.com', 'theater', 'Str 5', '5', 'aqw 5', 'City 5'),
+(7, 'Event 6', '2023-08-09 18:55:00', 'Event 6 Description', 'yosemite-8177850-1280-64dd1e57ed408.jpg', 4500, 'event6@event.com', '34535545', 'http://www.event6.com', 'music', 'Str 6', '6', 'ZipCode 6', 'City 6'),
+(8, 'event7', '2023-08-25 21:20:00', 'event 7 description', 'color-pencils-8127500-1280-64dd209d1e306.jpg', 5400, 'event7@event.com', '3534534', 'www.event7.com', 'sport', 'str 7', '7', 'ZipCode 7', 'City 7');
 
 -- --------------------------------------------------------
 
@@ -107,7 +112,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `email`, `roles`, `password`) VALUES
 (1, 'user@gmail.com', '[\"ROLE_USER\"]', '$2y$13$kGPAAamTiJaMhQ4ScuWyYutmA7mLbT9JxCLbMnALxPju/SeOy3tb6'),
-(2, 'user@yahoo.com', '[\"ROLE_ADMIN\"]', '$2y$13$qT2/Qc8JfC5CQhkWiggAAOefRpDcxksyM.QgqMPk02j3Sl1rhmVym');
+(2, 'user@yahoo.com', '[\"ROLE_ADMIN\"]', '$2y$13$qT2/Qc8JfC5CQhkWiggAAOefRpDcxksyM.QgqMPk02j3Sl1rhmVym'),
+(3, 'user@gmx.com', '[\"ROLE_USER\"]', '$2y$13$FA1kN553VBMW4NPaaCfF1.mNdtxJ4mx9TTw62fyRrUw3oGRlWDtAK');
 
 --
 -- Indexes for dumped tables
@@ -149,7 +155,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `messenger_messages`
@@ -161,7 +167,7 @@ ALTER TABLE `messenger_messages`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

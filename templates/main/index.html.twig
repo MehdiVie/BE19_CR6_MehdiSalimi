@@ -1,11 +1,74 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MainController!{% endblock %}
+{% block title %}Events{% endblock %}
 
 {% block body %}
+    <h1>Events</h1>
 
+    {# <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Email</th>
+                <th>Image</th>
+                <th>Capacity</th>
+                <th>Phone_number</th>
+                <th>Url</th>
+                <th>Type</th>
+                <th>Street_name</th>
+                <th>Number</th>
+                <th>Zip_code</th>
+                <th>City_name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody> #}
+            <div class="d-flex justify-content-center">
+        <div class="wrapper" >
+        {% for event in events %}
+            {# <tr>
+                <td>{{ event.id }}</td>
+                <td>{{ event.name }}</td>
+                <td>{{ event.date ? event.date|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ event.description }}</td>
+                <td>{{ event.email }}</td>
+                <td>{{ event.image }}</td>
+                <td>{{ event.capacity }}</td>
+                <td>{{ event.phoneNumber }}</td>
+                <td>{{ event.url }}</td>
+                <td>{{ event.type }}</td>
+                <td>{{ event.streetName }}</td>
+                <td>{{ event.number }}</td>
+                <td>{{ event.zipCode }}</td>
+                <td>{{ event.cityName }}</td>
+                <td>
+                    <a href="{{ path('app_events_show', {'id': event.id}) }}">show</a>
+                    <a href="{{ path('app_events_edit', {'id': event.id}) }}">edit</a>
+                </td>
+            </tr> #}
+            <div class="card " style="width: 18rem;">
+                <img class="card-img-top" src="{{ asset('pictures/' ~ event.image)}}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{ event.name }}</h5>
+                  <p class="card-text">{{ event.type }}</p>
+                  <p class="card-text">{{ event.date ? event.date|date('Y-m-d H:i:s') : '' }}</p>
+                  <p class="card-text">{{ event.cityName }}</p>
+                  <a href="{{ path('app_main_show', {'id': event.id}) }}" class="btn btn-primary">Detail</a>
+                  
+                </div>
+            </div>
+        {% else %}
+            <div>
+                no records found
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+        </tbody>
+    </table>
 
-<div >
-    <h1>Hello {{ controller_name }}! ✅</h1>
-</div>
+    
 {% endblock %}

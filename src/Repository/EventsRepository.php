@@ -16,6 +16,7 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class EventsRepository extends ServiceEntityRepository
 {
+    
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Events::class);
@@ -24,17 +25,18 @@ class EventsRepository extends ServiceEntityRepository
 //    /**
 //     * @return Events[] Returns an array of Events objects
 //     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('e')
-//            ->andWhere('e.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('e.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+   public function findByType($value): array
+   {
+        //dd($value);
+        return $this->createQueryBuilder('e')
+           ->andWhere('e.type = :val')
+           ->setParameter('val', $value)
+           ->orderBy('e.id', 'ASC')
+           ->setMaxResults(10)
+           ->getQuery()
+           ->getResult()
+       ;
+   }
 
 //    public function findOneBySomeField($value): ?Events
 //    {
